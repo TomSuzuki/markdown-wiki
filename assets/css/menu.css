@@ -1,0 +1,43 @@
+#menu ul {
+    list-style      : none;
+    background-color: var(--color_background);
+    display         : block;
+    height          : 100%;
+    margin          : 0;
+    padding         : 0;
+}
+
+#menu ul li {
+    padding: 0 0 .25em .25em;
+}
+
+#menu ul li a.now {
+    background-color: var(--color_line);
+    color           : var(--color_background);
+
+}
+
+#menu ul li a {
+    color                    : var(--color_line);
+    background               : none;
+    margin                   : 0;
+    padding                  : 2em 0;
+    text-orientation         : upright;
+    writing-mode             : vertical-rl;
+    text-decoration          : none;
+    width                    : 100%;
+    align-items              : center;
+    display                  : flex;
+    cursor                   : pointer;
+    transition               : background-color .25s, color .25s;
+    border-top-left-radius   : 1em;
+    border-bottom-left-radius: 1em;
+    border                   : solid 2px var(--color_line);
+    border-right             : none;
+    box-sizing               : border-box;
+}
+
+#menu ul li a:hover {
+    background-color: var(--color_line);
+    color           : var(--color_background);
+}

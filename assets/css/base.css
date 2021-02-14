@@ -1,0 +1,20 @@
+html,
+body {
+    padding    : 0;
+    margin     : 0;
+    font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic ProN", "游ゴシック", "メイリオ", "Osaka", Meiryo, sans-serif;
+    font-weight: bold;
+}
+
+#main {
+    display              : grid;
+    grid-template-columns: 3em 1fr;
+    min-height           : 100vh;
+    padding              : .5em 0 0 .5em;
+    box-sizing           : border-box;
+    background-color     : var(--color_background);
+}
+
+#frame {
+    background-color: var(--color_line);
+}
