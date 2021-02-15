@@ -26,3 +26,8 @@ func ErrorPageView(data ErrorPage) template.HTML {
 	data.ErrorMessage = errorMessage[data.ErrorCode]
 	return createHTML("templates/error.html", data)
 }
+
+// WordPageView ...単語のページの表示。
+func WordPageView(data WordPage) template.HTML {
+	return createHTML("templates/word.html", data)
+}

@@ -21,3 +21,10 @@ type ErrorPage struct {
 	ErrorCode    string
 	ErrorMessage string
 }
+
+// WordPage ...単語のページを表示するのに必要な情報です。
+type WordPage struct {
+	Word         string
+	MarkdownText string
+	MarkdownHTML template.HTML
+}
