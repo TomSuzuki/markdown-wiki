@@ -17,4 +17,6 @@ body {
 
 #frame {
     background-color: var(--color_line);
+    padding         : 2em;
+    box-sizing      : border-box;
 }

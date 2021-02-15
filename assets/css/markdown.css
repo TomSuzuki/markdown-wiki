@@ -1,0 +1,21 @@
+#frame_markdown>h1 {
+    border-bottom: 3px solid var(--color_background);
+}
+
+#markdown h1 {
+    border-bottom: 2px solid var(--color_background);
+}
+
+#markdown h2 {
+    border-bottom: 1px solid var(--color_gray);
+}
+
+#markdown code {
+    display         : block;
+    background-color: var(--color_gray);
+    margin          : 0;
+    padding         : 1em;
+    border-radius   : .5em;
+    box-sizing      : border-box;
+    white-space     : pre;
+}
