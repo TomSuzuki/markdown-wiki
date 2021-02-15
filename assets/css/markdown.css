@@ -13,9 +13,35 @@
 #markdown code {
     display         : block;
     background-color: var(--color_gray);
-    margin          : 0;
-    padding         : 1em;
+    padding         : 1.5em;
     border-radius   : .5em;
     box-sizing      : border-box;
     white-space     : pre;
+    margin          : 1em 0;
+    font-weight     : initial;
+}
+
+#markdown table {
+    background-color: var(--color_gray);
+    margin          : 1em 0;
+    border-collapse : collapse;
+    border          : solid 2px var(--color_text);
+    padding         : 1em;
+    box-sizing      : border-box;
+    text-align      : center;
+}
+
+#markdown table thead {
+    color           : var(--color_line);
+    background-color: var(--color_background);
+}
+
+#markdown table th,
+#markdown table td {
+    padding: .25em 1em;
+    border : solid 1px var(--color_text);
+}
+
+#markdown table tbody tr:nth-of-type(n) {
+    background-color: var(--color_line);
 }
