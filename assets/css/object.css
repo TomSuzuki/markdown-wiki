@@ -22,7 +22,8 @@ textarea {
     font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic ProN", "游ゴシック", "メイリオ", "Osaka", Meiryo, sans-serif;
 }
 
-input[type="button"] {
+input[type="button"],
+input[type="submit"] {
     box-sizing      : border-box;
     text-align      : center;
     border-radius   : .25em;
@@ -35,7 +36,8 @@ input[type="button"] {
     transition      : background-color .25s, color .25s;
 }
 
-input[type="button"]:hover {
+input[type="button"]:hover,
+input[type="submit"]:hover {
     cursor          : pointer;
     background-color: var(--color_background);
     color           : var(--color_line);
