@@ -5,3 +5,11 @@
     --color_line           : #FDFDFF;
     --color_gray           : #ECECEC;
 }
+
+a {
+    color: var(--color_background_dark);
+}
+
+a:hover {
+    color: var(--color_background);
+}

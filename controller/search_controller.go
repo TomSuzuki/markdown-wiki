@@ -22,6 +22,15 @@ func SearchPageController(c *gin.Context) {
 		list[i] = getFileNameWithoutExt(list[i])
 	}
 
+	// filter
+	listTemp := list
+	list = nil
+	for i := range listTemp {
+		if strings.Contains(listTemp[i], keyword) {
+			list = append(list, listTemp[i])
+		}
+	}
+
 	// data
 	var data view.SearchPage
 	data.Keyword = keyword

@@ -1,5 +1,11 @@
 <div id="frame_search">
-    <ul>
+    <div class="center">
+        <input type="text" placeholder="キーワード検索" id="search_input"
+            onchange="javascript:location.href=`?keyword=${document.getElementById('search_input').value}`;"
+            value="{{.Keyword}}">
+    </div>
+
+    <ul id="search_list">
         {{range .WordList}}
         <li><a href="/page?w={{.}}">{{.}}</a></li>
         {{end}}
