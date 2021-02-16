@@ -3,6 +3,14 @@ window.addEventListener("load", function () {
     if (document.getElementById("frame_write") !== null) onsubmit("frame_write", "new");
 });
 
+// deletePage ...
+function deletePage(name) {
+    accessServer(`/page?w=${name}`, () => {
+        location.href = `/top`;
+    }, "DELETE");
+}
+
+// onsubmit ...
 function onsubmit(formId, type) {
     // sendData ...Fromの送信を行う。
     function sendData(form) {
