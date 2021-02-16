@@ -36,3 +36,8 @@ func WordPageView(data WordPage) template.HTML {
 func WritePageView(data WritePage) template.HTML {
 	return createHTML("templates/write.html", data)
 }
+
+// SearchPageView ...検索ページの表示。
+func SearchPageView(data SearchPage) template.HTML {
+	return createHTML("templates/search.html", data)
+}
