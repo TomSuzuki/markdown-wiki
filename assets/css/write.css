@@ -6,6 +6,8 @@
     min-height           : 100%;
     box-sizing           : border-box;
     grid-gap             : 1em;
+    width                : 100%;
+    max-width            : 100%;
 }
 
 #frame_write #write_name {
