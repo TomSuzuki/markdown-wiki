@@ -4,8 +4,9 @@ import "html/template"
 
 // PageData ...表示用。
 type PageData struct {
-	MenuInfo MenuInfo
-	HTML     template.HTML
+	MenuInfo  MenuInfo
+	HTML      template.HTML
+	PageTitle string
 }
 
 // MenuInfo ...メニューバー用。現在の位置を示すため。

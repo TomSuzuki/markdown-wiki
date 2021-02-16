@@ -1,6 +1,7 @@
 package controller
 
 import (
+	"fmt"
 	"html/template"
 	"io/ioutil"
 
@@ -30,7 +31,8 @@ func TopPageController(c *gin.Context) {
 
 	// view
 	view.NewView(c, view.PageData{
-		HTML: view.WordPageView(data),
+		PageTitle: fmt.Sprintf("%s | %s", config.ServiceName, "Top"),
+		HTML:      view.WordPageView(data),
 		MenuInfo: view.MenuInfo{
 			MenuTop: true,
 		},
