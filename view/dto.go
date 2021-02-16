@@ -47,8 +47,16 @@ type PageStatus struct {
 
 // SearchPage ...検索ページの表示に必要な情報。
 type SearchPage struct {
-	Keyword  string
-	WordList []string
+	Path       string
+	Keyword    string
+	WordList   []PathData
+	FolderList []PathData
+}
+
+// PathData ...検索パスの情報。
+type PathData struct {
+	PathName string
+	Path     string
 }
 
 // EditPage ...編集ページに必要な情報。

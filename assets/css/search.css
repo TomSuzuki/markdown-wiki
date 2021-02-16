@@ -6,3 +6,19 @@
 #search_list {
     margin: 1em auto;
 }
+
+.search_word {
+    list-style-type: none;
+    border-bottom  : 1px solid var(--color_gray);
+}
+
+.search_word a {
+    display        : block;
+    padding        : .5em 1em;
+    text-decoration: none;
+    border-radius  : .25em;
+}
+
+.search_word a:hover {
+    background-color: var(--color_gray);
+}

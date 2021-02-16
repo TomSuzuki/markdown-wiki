@@ -6,8 +6,11 @@
     </div>
 
     <ul id="search_list">
+        {{range .FolderList}}
+        <li class="search_word"><a href="/search?f={{.Path}}">{{.PathName}}</a></li>
+        {{end}}
         {{range .WordList}}
-        <li><a href="/page?w={{.}}">{{.}}</a></li>
+        <li class="search_word"><a href="/page?w={{.Path}}">{{.PathName}}</a></li>
         {{end}}
     </ul>
 </div>
