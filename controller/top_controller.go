@@ -26,6 +26,7 @@ func TopPageController(c *gin.Context) {
 	data.Word = config.ServiceName
 	data.MarkdownText = string(md)
 	data.MarkdownHTML = template.HTML(string(blackfriday.MarkdownOptions([]byte(data.MarkdownText), renderer, options)))
+	data.CanEdit = false
 
 	// view
 	view.NewView(c, view.PageData{

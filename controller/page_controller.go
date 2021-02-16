@@ -31,6 +31,7 @@ func WordPageController(c *gin.Context) {
 	data.Word = word
 	data.MarkdownText, err = model.GetMarkdownText(word)
 	data.MarkdownHTML = template.HTML(string(blackfriday.MarkdownCommon([]byte(data.MarkdownText))))
+	data.CanEdit = true
 	if err != nil {
 		// 新規作成ページに飛ばす。
 	}
