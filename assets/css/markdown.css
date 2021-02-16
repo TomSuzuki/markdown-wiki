@@ -1,5 +1,18 @@
-#frame_markdown>h1 {
+#markdown_top {
+    display              : grid;
+    grid-template-columns: 1fr auto;
+    position             : relative;
+    margin               : 1em 0;
+}
+
+#markdown_top>h1 {
+    margin       : 0;
     border-bottom: 3px solid var(--color_background);
+}
+
+#markdown_edit {
+    margin: 0 .5em;
+    height: 100%;
 }
 
 #markdown>nav:first-child {
