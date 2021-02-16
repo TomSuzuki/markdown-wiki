@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"net/http"
 	"os"
+	"path/filepath"
+	"strings"
 
 	"github.com/TomSuzuki/markdown-wiki/config"
 	"github.com/TomSuzuki/markdown-wiki/server/service"
@@ -24,6 +26,15 @@ func DeletePageController(c *gin.Context) {
 	if err := os.Remove(path); err != nil {
 		c.String(http.StatusNotFound, "")
 		return
+	}
+
+	// folder empty
+	dirs := strings.Split(filepath.ToSlash(path), "/")
+	temp := path
+	//for i := range dirs {
+	for i := len(dirs) - 1; i >= 0; i-- {
+		temp = temp[:strings.LastIndex(temp, dirs[i])]
+		os.Remove(temp)
 	}
 
 	// return

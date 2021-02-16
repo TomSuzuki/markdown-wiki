@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
+	"os"
+	"path/filepath"
 
 	"github.com/TomSuzuki/markdown-wiki/config"
 	"github.com/gin-gonic/gin"
@@ -24,8 +26,14 @@ func SaveController(c *gin.Context) {
 		return
 	}
 
-	// save
+	// path
 	path := fmt.Sprintf("%s%s.md", config.PageSavePath, name)
+
+	// path ok?
+	dir := filepath.Dir(path)
+	os.MkdirAll(dir, os.ModePerm)
+
+	// save
 	ioutil.WriteFile(path, []byte(text), 0666)
 	c.String(http.StatusOK, "")
 }
