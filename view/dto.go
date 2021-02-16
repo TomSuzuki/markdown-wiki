@@ -33,3 +33,8 @@ type WordPage struct {
 type WritePage struct {
 	Word string
 }
+
+// PageStatus ...ページの情報を返すときに使います。
+type PageStatus struct {
+	Exist bool `json:"is_exist,bool"`
+}

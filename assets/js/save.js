@@ -35,8 +35,25 @@ function onsubmit(formId, type) {
         event.preventDefault();
 
         // check ...既にページが存在するかチェックする。
+        let name = document.getElementsByName("name")[0].value
+        accessServer(`/page/status?name=${name}`, (result) => {
+            let json = JSON.parse(result);
 
-        // send
-        sendData(form);
+            // send or error
+            if (!json["is_exist"]) sendData(form);
+            else alert("既に存在するページです。ページ名を変更してください。");
+        });
+
+
     });
+}
+
+// accessServer ...
+function accessServer(path, Callback) {
+    let httpObj = new XMLHttpRequest();
+    httpObj.onreadystatechange = function () {
+        if (httpObj.readyState === 4 && httpObj.status === 200) Callback(httpObj.responseText);
+    }
+    httpObj.open("GET", path, true);
+    httpObj.send(null);
 }
