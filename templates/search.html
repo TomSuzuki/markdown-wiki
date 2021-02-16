@@ -1,6 +1,6 @@
 <div id="frame_search">
     <div class="center">
-        <input type="text" placeholder="キーワード検索" id="search_input"
+        <input type="text" placeholder="検索" id="search_input"
             onchange="javascript:location.href=`?keyword=${document.getElementById('search_input').value}`;"
             value="{{.Keyword}}">
     </div>
@@ -15,5 +15,5 @@
     </ul>
 
     <div id="search_add_button_height"></div>
-    <a id="search_add_button" href="/write?w={{.Path}}">追加</a>
+    <a id="search_add_button" href="/write?w={{.Path}}">+</a>
 </div>
