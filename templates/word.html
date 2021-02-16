@@ -1,5 +1,8 @@
 <div id="frame_markdown">
-    <h1>{{.Word}}</h1>
+    <div id="markdown_top">
+        <h1>{{.Word}}</h1>
+        <input id="markdown_edit" type="button" value="編集" onclick="javascript:location.href='./edit?w={{.Word}}'">
+    </div>
     <div id="markdown">
         {{.MarkdownHTML}}
     </div>
