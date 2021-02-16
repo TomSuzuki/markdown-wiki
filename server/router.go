@@ -24,6 +24,8 @@ func Router() (router *gin.Engine) {
 
 	router.POST("/save", controller.SaveController)
 
+	router.DELETE("/page", controller.DeletePageController)
+
 	// no route
 	router.GET("", controller.TopPageController)
 	router.NoRoute(controller.ErrorPageController)

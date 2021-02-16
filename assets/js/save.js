@@ -36,6 +36,7 @@ function onsubmit(formId, type) {
 
         // check ...既にページが存在するかチェックする。
         let isNew = document.getElementById("isNew").checked;
+        let oldName = document.getElementById("oldName").value;
         let name = document.getElementsByName("name")[0].value
         if (isNew) {
             accessServer(`/page/status?name=${name}`, (result) => {
@@ -47,6 +48,11 @@ function onsubmit(formId, type) {
             });
         } else {
             sendData(form);
+
+            // 名前が変わった場合、古いファイルは削除する。
+            if (oldName !== name) {
+                accessServer(`/page?w=${oldName}`, () => { }, "DELETE");
+            }
         }
 
 
@@ -55,11 +61,12 @@ function onsubmit(formId, type) {
 }
 
 // accessServer ...
-function accessServer(path, Callback) {
+function accessServer(path, Callback, method) {
+    method = method || "GET"
     let httpObj = new XMLHttpRequest();
     httpObj.onreadystatechange = function () {
         if (httpObj.readyState === 4 && httpObj.status === 200) Callback(httpObj.responseText);
     }
-    httpObj.open("GET", path, true);
+    httpObj.open(method, path, true);
     httpObj.send(null);
 }
