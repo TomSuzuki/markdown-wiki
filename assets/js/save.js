@@ -35,25 +35,38 @@ function onsubmit(formId, type) {
         event.preventDefault();
 
         // check ...既にページが存在するかチェックする。
+        let isNew = document.getElementById("isNew").checked;
+        let oldName = document.getElementById("oldName").value;
         let name = document.getElementsByName("name")[0].value
-        accessServer(`/page/status?name=${name}`, (result) => {
-            let json = JSON.parse(result);
+        if (isNew) {
+            accessServer(`/page/status?name=${name}`, (result) => {
+                let json = JSON.parse(result);
 
-            // send or error
-            if (!json["is_exist"]) sendData(form);
-            else alert("既に存在するページです。ページ名を変更してください。");
-        });
+                // send or error
+                if (!json["is_exist"]) sendData(form);
+                else alert("既に存在するページです。ページ名を変更してください。");
+            });
+        } else {
+            sendData(form);
+
+            // 名前が変わった場合、古いファイルは削除する。
+            if (oldName !== name) {
+                accessServer(`/page?w=${oldName}`, () => { }, "DELETE");
+            }
+        }
+
 
 
     });
 }
 
 // accessServer ...
-function accessServer(path, Callback) {
+function accessServer(path, Callback, method) {
+    method = method || "GET"
     let httpObj = new XMLHttpRequest();
     httpObj.onreadystatechange = function () {
         if (httpObj.readyState === 4 && httpObj.status === 200) Callback(httpObj.responseText);
     }
-    httpObj.open("GET", path, true);
+    httpObj.open(method, path, true);
     httpObj.send(null);
 }

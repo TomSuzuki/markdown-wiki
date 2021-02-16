@@ -41,3 +41,8 @@ func WritePageView(data WritePage) template.HTML {
 func SearchPageView(data SearchPage) template.HTML {
 	return createHTML("templates/search.html", data)
 }
+
+// EditPageView ...編集ページの表示（内部は新規作成と同じ）。
+func EditPageView(data EditPage) template.HTML {
+	return createHTML("templates/write.html", data)
+}
