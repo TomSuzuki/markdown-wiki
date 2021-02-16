@@ -14,9 +14,13 @@ func Router() (router *gin.Engine) {
 	router.Static("/assets", "./assets")
 
 	// route
+	router.GET("/page/status", controller.PageStatusController)
 	router.GET("/error", controller.ErrorPageController)
 	router.GET("/page", controller.WordPageController)
 	router.GET("/top", controller.TopPageController)
+	router.GET("/write", controller.WritePageController)
+
+	router.POST("/save", controller.SaveController)
 
 	// no route
 	router.GET("", controller.TopPageController)
