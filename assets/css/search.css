@@ -22,3 +22,30 @@
 .search_word a:hover {
     background-color: var(--color_gray);
 }
+
+#search_add_button_height {
+    content: '';
+    width  : 100%;
+    height : 8em;
+}
+
+#search_add_button {
+    max-width       : 100%;
+    bottom          : 2em;
+    right           : 2em;
+    position        : fixed;
+    font-weight     : bold;
+    font-size       : large;
+    border-radius   : 1em;
+    background-color: var(--color_background);
+    padding         : 1em 2em;
+    box-shadow      : 0 5px 12px 0 rgba(0, 0, 0, .5);
+    transition      : box-shadow .2s;
+    color           : var(--color_white);
+    text-decoration : none;
+}
+
+#search_add_button:hover {
+    cursor    : pointer;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .2);
+}
