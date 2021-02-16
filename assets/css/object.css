@@ -1,3 +1,7 @@
+.center {
+    text-align: center;
+}
+
 input[type="text"],
 textarea {
     border          : none;

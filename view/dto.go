@@ -38,3 +38,9 @@ type WritePage struct {
 type PageStatus struct {
 	Exist bool `json:"is_exist,bool"`
 }
+
+// SearchPage ...検索ページの表示に必要な情報。
+type SearchPage struct {
+	Keyword  string
+	WordList []string
+}

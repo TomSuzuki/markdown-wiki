@@ -19,6 +19,7 @@ func Router() (router *gin.Engine) {
 	router.GET("/page", controller.WordPageController)
 	router.GET("/top", controller.TopPageController)
 	router.GET("/write", controller.WritePageController)
+	router.GET("/search", controller.SearchPageController)
 
 	router.POST("/save", controller.SaveController)
 
