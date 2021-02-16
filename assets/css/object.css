@@ -1,13 +1,16 @@
 .center {
     text-align: center;
+    width     : 100%;
 }
 
 input[type="text"],
+input[type="search"],
 textarea {
     border          : none;
     border-bottom   : 3px solid var(--color_background);
     background-color: var(--color_gray);
     letter-spacing  : inherit;
+    min-width       : 1em;
 }
 
 input:focus,
@@ -15,7 +18,8 @@ textarea:focus {
     outline: 0;
 }
 
-input[type="text"] {
+input[type="text"],
+input[type="search"] {
     padding: .25em;
 }
 
@@ -36,7 +40,6 @@ input[type="submit"] {
     font-size       : x-large;
     font-weight     : bold;
     padding         : 0 1.5em;
-    min-width       : 4em;
     transition      : background-color .25s, color .25s;
 }
 
