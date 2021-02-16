@@ -35,14 +35,20 @@ function onsubmit(formId, type) {
         event.preventDefault();
 
         // check ...既にページが存在するかチェックする。
+        let isNew = document.getElementById("isNew").checked;
         let name = document.getElementsByName("name")[0].value
-        accessServer(`/page/status?name=${name}`, (result) => {
-            let json = JSON.parse(result);
+        if (isNew) {
+            accessServer(`/page/status?name=${name}`, (result) => {
+                let json = JSON.parse(result);
 
-            // send or error
-            if (!json["is_exist"]) sendData(form);
-            else alert("既に存在するページです。ページ名を変更してください。");
-        });
+                // send or error
+                if (!json["is_exist"]) sendData(form);
+                else alert("既に存在するページです。ページ名を変更してください。");
+            });
+        } else {
+            sendData(form);
+        }
+
 
 
     });

@@ -40,6 +40,7 @@ func WordPageController(c *gin.Context) {
 		HTML: view.WordPageView(data),
 		MenuInfo: view.MenuInfo{
 			MenuSearch: true,
+			Word:       word,
 		},
 	})
 }

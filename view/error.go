@@ -4,4 +4,5 @@ package view
 var errorMessage = map[string]string{
 	"000": "ページが見つかりませんでした。",
 	"030": "ページが指定されていません。",
+	"031": "単語が指定されていません。",
 }

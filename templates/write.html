@@ -1,5 +1,6 @@
 <form id="frame_write">
-    <input name="name" id="write_name" type="text">
+    <input style="display: none;" type="checkbox" id="isNew" {{if .IsNew}}checked="checked" {{end}}>
+    <input name="name" id="write_name" type="text" value="{{.EditName}}">
     <input id="write_save" type="submit" value="保存">
-    <textarea name="text" id="write_text"></textarea>
+    <textarea name="text" id="write_text">{{.EditText}}</textarea>
 </form>
