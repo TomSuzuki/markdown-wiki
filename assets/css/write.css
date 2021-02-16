@@ -21,3 +21,10 @@
     grid-area: text;
     font-size: large;
 }
+
+#frame_write input[type="submit"],
+#frame_write input[type="button"] {
+    height    : 100%;
+    margin    : 0 .25em;
+    box-sizing: border-box;
+}
