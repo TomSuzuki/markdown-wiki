@@ -1,0 +1,51 @@
+.center {
+    text-align: center;
+    width     : 100%;
+}
+
+input[type="text"],
+input[type="search"],
+textarea {
+    border          : none;
+    border-bottom   : 3px solid var(--color_background);
+    background-color: var(--color_gray);
+    letter-spacing  : inherit;
+    min-width       : 1em;
+}
+
+input:focus,
+textarea:focus {
+    outline: 0;
+}
+
+input[type="text"],
+input[type="search"] {
+    padding: .25em;
+}
+
+textarea {
+    line-height: 1.5em;
+    padding    : .5em;
+    resize     : none;
+    font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic ProN", "游ゴシック", "メイリオ", "Osaka", Meiryo, sans-serif;
+}
+
+input[type="button"],
+input[type="submit"] {
+    box-sizing      : border-box;
+    text-align      : center;
+    border-radius   : .25em;
+    border          : 2px solid var(--color_background);
+    background-color: var(--color_line);
+    font-size       : x-large;
+    font-weight     : bold;
+    padding         : 0 1.5em;
+    transition      : background-color .25s, color .25s;
+}
+
+input[type="button"]:hover,
+input[type="submit"]:hover {
+    cursor          : pointer;
+    background-color: var(--color_background);
+    color           : var(--color_line);
+}

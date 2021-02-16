@@ -1,0 +1,85 @@
+#markdown_top {
+    display              : grid;
+    grid-template-columns: 1fr auto;
+    position             : relative;
+    margin               : 1em 0;
+}
+
+#markdown_top>h1 {
+    margin       : 0;
+    border-bottom: 3px solid var(--color_background);
+}
+
+#markdown_edit {
+    margin: 0 .5em;
+    height: 100%;
+}
+
+#markdown>nav:first-child {
+    margin-bottom: 4em;
+}
+
+#markdown * {
+    max-width : 100%;
+    box-sizing: border-box;
+}
+
+#markdown h1 {
+    margin-top   : 3em;
+    font-size    : x-large;
+    border-bottom: 2px solid var(--color_background);
+}
+
+#markdown h2 {
+    margin-top   : 2em;
+    font-size    : large;
+    border-bottom: 1px solid var(--color_gray);
+}
+
+#markdown p {
+    padding: 0 .5em;
+}
+
+#markdown code {
+    display         : inline;
+    background-color: var(--color_gray);
+    padding         : .3em .5em;
+    border-radius   : .5em;
+    box-sizing      : border-box;
+    white-space     : pre;
+    margin          : 0 .25em;
+    font-weight     : initial;
+}
+
+#markdown pre>code {
+    padding    : 1em;
+    margin     : 1em .5em;
+    display    : block;
+    line-height: 1.25em;
+}
+
+
+#markdown table {
+    background-color: var(--color_gray);
+    margin          : 1em 0;
+    border-collapse : collapse;
+    border          : solid 2px var(--color_text);
+    padding         : 1em;
+    box-sizing      : border-box;
+    text-align      : center;
+}
+
+#markdown table thead {
+    color           : var(--color_line);
+    background-color: var(--color_background);
+}
+
+#markdown table th,
+#markdown table td {
+    padding: .25em 1em;
+    border : solid 1px var(--color_text);
+}
+
+#markdown table tbody tr:nth-of-type(n) {
+    background-color: var(--color_line);
+}

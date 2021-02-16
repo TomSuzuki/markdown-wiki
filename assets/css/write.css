@@ -1,0 +1,32 @@
+#frame_write {
+    display              : grid;
+    grid-template        : "name save""text text";
+    grid-template-columns: 1fr auto;
+    grid-template-rows   : auto 1fr;
+    min-height           : 100%;
+    box-sizing           : border-box;
+    grid-gap             : 1em;
+    width                : 100%;
+    max-width            : 100%;
+}
+
+#frame_write #write_name {
+    grid-area: name;
+    font-size: xx-large;
+}
+
+#frame_write #write_save {
+    grid-area: save;
+}
+
+#frame_write #write_text {
+    grid-area: text;
+    font-size: large;
+}
+
+#frame_write input[type="submit"],
+#frame_write input[type="button"] {
+    height    : 100%;
+    margin    : 0 .25em;
+    box-sizing: border-box;
+}

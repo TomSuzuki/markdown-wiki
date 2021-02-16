@@ -1,0 +1,16 @@
+:root {
+    --color_text           : #110200;
+    --color_background     : #2FB3FE;
+    --color_background_dark: #1795dd;
+    --color_line           : #FDFDFF;
+    --color_gray           : #ECECEC;
+    --color_white          : #FCFCFC;
+}
+
+a {
+    color: var(--color_background_dark);
+}
+
+a:hover {
+    color: var(--color_background);
+}
