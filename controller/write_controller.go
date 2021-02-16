@@ -14,6 +14,7 @@ func WritePageController(c *gin.Context) {
 
 	// dto
 	var data view.WritePage
+	data.EditName = word
 	data.Word = word
 	data.IsNew = true
 
