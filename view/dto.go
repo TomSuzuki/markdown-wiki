@@ -28,3 +28,8 @@ type WordPage struct {
 	MarkdownText string
 	MarkdownHTML template.HTML
 }
+
+// WritePage ...新規作成ページに必要な情報です。
+type WritePage struct {
+	Word string
+}

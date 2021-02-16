@@ -31,3 +31,8 @@ func ErrorPageView(data ErrorPage) template.HTML {
 func WordPageView(data WordPage) template.HTML {
 	return createHTML("templates/word.html", data)
 }
+
+// WritePageView ...新規作成ページの表示。
+func WritePageView(data WritePage) template.HTML {
+	return createHTML("templates/write.html", data)
+}

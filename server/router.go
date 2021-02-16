@@ -17,6 +17,7 @@ func Router() (router *gin.Engine) {
 	router.GET("/error", controller.ErrorPageController)
 	router.GET("/page", controller.WordPageController)
 	router.GET("/top", controller.TopPageController)
+	router.GET("/write", controller.WritePageController)
 
 	// no route
 	router.GET("", controller.TopPageController)
