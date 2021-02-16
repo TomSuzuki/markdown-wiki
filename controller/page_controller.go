@@ -1,8 +1,10 @@
 package controller
 
 import (
+	"fmt"
 	"html/template"
 
+	"github.com/TomSuzuki/markdown-wiki/config"
 	"github.com/TomSuzuki/markdown-wiki/model"
 	"github.com/TomSuzuki/markdown-wiki/server/service"
 	"github.com/TomSuzuki/markdown-wiki/view"
@@ -38,7 +40,8 @@ func WordPageController(c *gin.Context) {
 
 	// view
 	view.NewView(c, view.PageData{
-		HTML: view.WordPageView(data),
+		PageTitle: fmt.Sprintf("%s | %s", config.ServiceName, word),
+		HTML:      view.WordPageView(data),
 		MenuInfo: view.MenuInfo{
 			MenuSearch: true,
 			Word:       word,

@@ -5,11 +5,15 @@ import (
 	"html/template"
 	"net/http"
 
+	"github.com/TomSuzuki/markdown-wiki/config"
 	"github.com/gin-gonic/gin"
 )
 
 // NewView ...表示する。
 func NewView(c *gin.Context, data PageData) {
+	if data.PageTitle == "" {
+		data.PageTitle = config.ServiceName
+	}
 	c.HTML(http.StatusOK, "index.html", data)
 }
 
