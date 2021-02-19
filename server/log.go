@@ -13,6 +13,6 @@ import (
 func InitLog() {
 	os.Mkdir("./log/", 0777)
 	f, _ := os.Create("./log/" + time.Now().Format("2006-0102-1504") + ".log")
-	gin.DefaultWriter = io.MultiWriter(os.Stdout, f)
-	log.SetOutput(io.MultiWriter(os.Stdout, f))
+	gin.DefaultWriter = io.MultiWriter(f)
+	log.SetOutput(io.MultiWriter(f))
 }
