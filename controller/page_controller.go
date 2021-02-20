@@ -19,6 +19,7 @@ import (
 func WordPageController(c *gin.Context) {
 	// query
 	word, err := service.QueryString(c, "w")
+	word, _ = url.QueryUnescape(word)
 	if err != nil {
 		view.NewView(c, view.PageData{
 			HTML: view.ErrorPageView(view.ErrorPage{
@@ -44,7 +45,8 @@ func WordPageController(c *gin.Context) {
 
 	// dto
 	var data view.WordPage
-	data.Word = template.HTML(linkTitle)
+	data.Word = word
+	data.Title = template.HTML(linkTitle)
 	data.MarkdownText, err = model.GetMarkdownText(word)
 	data.MarkdownHTML = template.HTML(string(blackfriday.MarkdownCommon([]byte(data.MarkdownText))))
 	data.CanEdit = true

@@ -27,7 +27,8 @@ type ErrorPage struct {
 // WordPage ...単語のページを表示するのに必要な情報です。
 type WordPage struct {
 	CanEdit      bool
-	Word         template.HTML
+	Word         string
+	Title        template.HTML
 	MarkdownText string
 	MarkdownHTML template.HTML
 }
