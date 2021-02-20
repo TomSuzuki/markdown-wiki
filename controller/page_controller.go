@@ -3,6 +3,9 @@ package controller
 import (
 	"fmt"
 	"html/template"
+	"net/url"
+	"path/filepath"
+	"strings"
 
 	"github.com/TomSuzuki/markdown-wiki/config"
 	"github.com/TomSuzuki/markdown-wiki/model"
@@ -28,9 +31,20 @@ func WordPageController(c *gin.Context) {
 		return
 	}
 
+	// word link
+	word = filepath.ToSlash(filepath.Clean(word))
+	wordFolder := strings.Split(word, "/")
+	linkPath := "search?f=" + url.QueryEscape("/")
+	linkTitle := ""
+	for i := range wordFolder[:len(wordFolder)-1] {
+		linkPath += url.QueryEscape(fmt.Sprintf("%s/", wordFolder[i]))
+		linkTitle += fmt.Sprintf("<a href='%s'>%s</a>/", linkPath, wordFolder[i])
+	}
+	linkTitle += wordFolder[len(wordFolder)-1]
+
 	// dto
 	var data view.WordPage
-	data.Word = word
+	data.Word = template.HTML(linkTitle)
 	data.MarkdownText, err = model.GetMarkdownText(word)
 	data.MarkdownHTML = template.HTML(string(blackfriday.MarkdownCommon([]byte(data.MarkdownText))))
 	data.CanEdit = true
