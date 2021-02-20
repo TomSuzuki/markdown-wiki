@@ -84,6 +84,7 @@ func SearchPageController(c *gin.Context) {
 	}
 
 	// ..
+	path = filepath.Clean(path)
 	if path != "." && path != "" && path != "\\" {
 		path = filepath.Clean(path)
 		path = strings.Replace(path, "\\\\", "", 1)
