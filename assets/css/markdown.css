@@ -40,6 +40,10 @@
     padding: 0 .5em;
 }
 
+#markdown a {
+    word-break: break-all;
+}
+
 #markdown code {
     display         : inline;
     background-color: var(--color_gray);
@@ -47,7 +51,7 @@
     border-radius   : .5em;
     box-sizing      : border-box;
     white-space     : pre;
-    margin          : 0 .25em;
+    margin          : .1em .25em;
     font-weight     : initial;
 }
 
