@@ -31,7 +31,6 @@ func DeletePageController(c *gin.Context) {
 	// folder empty
 	dirs := strings.Split(filepath.ToSlash(path), "/")
 	temp := path
-	//for i := range dirs {
 	for i := len(dirs) - 1; i >= 0; i-- {
 		temp = temp[:strings.LastIndex(temp, dirs[i])]
 		os.Remove(temp)

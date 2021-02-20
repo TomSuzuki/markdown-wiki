@@ -56,6 +56,8 @@ func SearchPageController(c *gin.Context) {
 
 	// data
 	path, _ := c.GetQuery("f")
+	path = filepath.Clean(path)
+	path = filepath.ToSlash(path)
 	var data view.SearchPage
 	data.Keyword = keyword
 	data.Path = path
