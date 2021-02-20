@@ -5,8 +5,6 @@
             <li><a href="./top" {{ if .MenuTop }} class="now" {{end}}>トップ</a></li>
             <li><a href="./search" {{ if .MenuSearch }} class="now" {{end}}>ドキュメント</a></li>
             <li><a href="./write" {{ if .MenuNewPage }} class="now" {{end}}>新規作成</a></li>
-            <li><a {{ if eq .Word "" }} href="./edit" {{else}} href="./edit?w={{.Word}}" {{end}} {{ if .MenuEdit }}
-                    class="now" {{end}}>編集</a></li>
         </ul>
         <div id="logo"><a href="https://github.com/TomSuzuki/markdown-wiki" target="_blank">Markdown Wiki System</a>
         </div>

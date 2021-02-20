@@ -3,6 +3,7 @@ package controller
 import (
 	"fmt"
 	"io/ioutil"
+	"net/url"
 	"path/filepath"
 	"strings"
 
@@ -54,10 +55,16 @@ func SearchPageController(c *gin.Context) {
 		return
 	}
 
-	// data
+	// path
 	path, _ := c.GetQuery("f")
+	path, _ = url.QueryUnescape(path)
 	path = filepath.Clean(path)
 	path = filepath.ToSlash(path)
+	if string(path[len(path)-1]) != "/" {
+		path += "/"
+	}
+
+	// data
 	var data view.SearchPage
 	data.Keyword = keyword
 	data.Path = path
@@ -68,12 +75,12 @@ func SearchPageController(c *gin.Context) {
 	for _, file := range files {
 		if file.IsDir() {
 			data.FolderList = append(data.FolderList, view.PathData{
-				Path:     fmt.Sprintf("%s/%s", path, file.Name()),
+				Path:     url.QueryEscape(fmt.Sprintf("%s/%s", path, file.Name())),
 				PathName: fmt.Sprintf("📁  %s", file.Name()),
 			})
 		} else {
 			data.WordList = append(data.WordList, view.PathData{
-				Path:     fmt.Sprintf("%s/%s", path, file.Name()),
+				Path:     url.QueryEscape(fmt.Sprintf("%s/%s", path, file.Name())),
 				PathName: file.Name(),
 			})
 		}

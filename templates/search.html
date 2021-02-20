@@ -3,7 +3,7 @@
         <input type="search" placeholder="検索" id="search_input"
             onchange="javascript:location.href=`?keyword=${document.getElementById('search_input').value}`;"
             value="{{.Keyword}}">
-        <p>Path: {{.Path}}</p>
+        {{with .Path}}<p>Path: {{.}}</p>{{end}}
     </div>
 
     <ul id="search_list">
