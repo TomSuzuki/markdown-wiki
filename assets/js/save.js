@@ -5,7 +5,8 @@ window.addEventListener("load", function () {
 
 // deletePage ...
 function deletePage(name) {
-    accessServer(`/page?w=${name}`, () => {
+    let flg = window.confirm("本当にページを削除しますか？");
+    if (flg) accessServer(`/page?w=${name}`, () => {
         location.href = `/top`;
     }, "DELETE");
 }
