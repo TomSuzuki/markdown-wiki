@@ -13,10 +13,10 @@ import (
 
 // PageStatusController ...ページの情報を返す。
 func PageStatusController(c *gin.Context) {
-	// query
+	// query[name]
 	name, err := service.QueryString(c, "name")
 	if err != nil || name == "" {
-		c.String(http.StatusBadRequest, "")
+		c.Status(http.StatusBadRequest)
 		return
 	}
 

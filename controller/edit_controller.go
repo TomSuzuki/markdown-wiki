@@ -9,7 +9,7 @@ import (
 
 // EditPageController ...編集ページの表示処理を行う。
 func EditPageController(c *gin.Context) {
-	// query
+	// query[word]
 	word, err := service.QueryString(c, "w")
 	if err != nil {
 		view.NewView(c, view.PageData{
@@ -26,7 +26,7 @@ func EditPageController(c *gin.Context) {
 	// data
 	var data view.EditPage
 	data.EditName = word
-	data.EditText, err = model.GetMarkdownText(word)
+	data.EditText, err = model.GetWordText(word)
 	data.IsNew = false
 
 	// view
