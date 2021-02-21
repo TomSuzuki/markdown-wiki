@@ -12,7 +12,6 @@ import (
 	"github.com/TomSuzuki/markdown-wiki/server/service"
 	"github.com/TomSuzuki/markdown-wiki/view"
 	"github.com/gin-gonic/gin"
-	"github.com/russross/blackfriday"
 )
 
 // WordPageController ...単語のページを表示します。
@@ -47,12 +46,9 @@ func WordPageController(c *gin.Context) {
 	var data view.WordPage
 	data.Word = word
 	data.Title = template.HTML(linkTitle)
-	data.MarkdownText, err = model.GetMarkdownText(word)
-	data.MarkdownHTML = template.HTML(string(blackfriday.MarkdownCommon([]byte(data.MarkdownText))))
+	data.MarkdownText, _ = model.GetWordText(word)
+	data.MarkdownHTML = model.MarkdownToHTML(data.MarkdownText)
 	data.CanEdit = true
-	if err != nil {
-		// 新規作成ページに飛ばす。
-	}
 
 	// view
 	view.NewView(c, view.PageData{

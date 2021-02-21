@@ -8,8 +8,7 @@ import (
 
 // WritePageController ...新規作成ページの処理。
 func WritePageController(c *gin.Context) {
-
-	// query
+	// query[word]
 	word, _ := service.QueryString(c, "w")
 
 	// dto
