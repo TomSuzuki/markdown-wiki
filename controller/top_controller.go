@@ -2,31 +2,20 @@ package controller
 
 import (
 	"fmt"
-	"html/template"
-	"io/ioutil"
 
 	"github.com/TomSuzuki/markdown-wiki/config"
+	"github.com/TomSuzuki/markdown-wiki/model"
 	"github.com/TomSuzuki/markdown-wiki/view"
 	"github.com/gin-gonic/gin"
-	"github.com/russross/blackfriday"
 )
 
 // TopPageController ...トップページを表示する（内部は単語ページ流用する）。
 func TopPageController(c *gin.Context) {
-	// md
-	md, _ := ioutil.ReadFile(config.TopPageMarkdownPath)
-
-	// rendering
-	extensionsFlags := blackfriday.EXTENSION_FENCED_CODE
-	htmlFlags := blackfriday.HTML_TOC
-	renderer := blackfriday.HtmlRenderer(htmlFlags, "", "")
-	options := blackfriday.Options{Extensions: extensionsFlags}
-
 	// dto
 	var data view.WordPage
 	data.Title = config.ServiceName
-	data.MarkdownText = string(md)
-	data.MarkdownHTML = template.HTML(string(blackfriday.MarkdownOptions([]byte(data.MarkdownText), renderer, options)))
+	data.MarkdownText, _ = model.GetFileString(config.TopPageMarkdownPath)
+	data.MarkdownHTML = model.MarkdownToHTML(data.MarkdownText)
 	data.CanEdit = false
 
 	// view

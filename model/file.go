@@ -4,12 +4,21 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/url"
+	"os"
 	"path/filepath"
 	"strings"
 
 	"github.com/TomSuzuki/markdown-wiki/config"
 	"github.com/TomSuzuki/markdown-wiki/view"
 )
+
+// SaveWord ...ファイルを保存する。
+func SaveWord(word string, text string) {
+	path := fmt.Sprintf("%s%s.md", config.PageSavePath, word)
+	dir := filepath.Dir(path)
+	os.MkdirAll(dir, os.ModePerm)
+	ioutil.WriteFile(path, []byte(text), 0666)
+}
 
 // GetFileNameWithoutExt ...文字列から拡張子を削除。
 func GetFileNameWithoutExt(path string) string {
