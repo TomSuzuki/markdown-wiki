@@ -6,8 +6,8 @@ import (
 	"io/ioutil"
 	"os"
 
+	"github.com/TomSuzuki/gomarkdown"
 	"github.com/TomSuzuki/markdown-wiki/config"
-	"github.com/russross/blackfriday"
 )
 
 // GetWordText ...単語ファイルのマークダウンを読み取って返す。
@@ -24,11 +24,5 @@ func GetFileString(path string) (string, error) {
 
 // MarkdownToHTML ...マークダウンからHTMLに。
 func MarkdownToHTML(text string) template.HTML {
-	// option
-	extensionsFlags := blackfriday.EXTENSION_FENCED_CODE
-	htmlFlags := blackfriday.HTML_TOC
-	renderer := blackfriday.HtmlRenderer(htmlFlags, "", "")
-	options := blackfriday.Options{Extensions: extensionsFlags}
-
-	return template.HTML(string(blackfriday.MarkdownOptions([]byte(text), renderer, options)))
+	return template.HTML(gomarkdown.MarkdownToHTML(text))
 }
