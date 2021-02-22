@@ -14,10 +14,7 @@ go run main.go
 作成した記事は、そのページを開いた状態で編集タブを押すことで書き換えることができます。  
 書式は基本的なマークダウンの形式です。
 
-# ライセンスの表記
-使用させいただいたもの。  
+# 使用しているマークダウン生成関数
+[TomSuzuki/gomarkdown: replaces markdown strings with HTML strings.](https://github.com/TomSuzuki/gomarkdown)
 
-- [google-code-prettify | Google Code Archive - Long-term storage for Google Code Project Hosting.](https://code.google.com/archive/p/google-code-prettify/) `Apache License Version 2.0`
-- [gin-gonic/gin: Gin is a HTTP web framework written in Go (Golang). It features a Martini-like API with much better performance -- up to 40 times faster. If you need smashing performance, get yourself some Gin.](https://github.com/gin-gonic/gin) `MIT License`
-- [russross/blackfriday: Blackfriday: a markdown processor for Go](https://github.com/russross/blackfriday) `2-clause BSD license`
 
