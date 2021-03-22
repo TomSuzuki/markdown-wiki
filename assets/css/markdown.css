@@ -47,7 +47,7 @@
 #markdown code {
     display         : inline;
     background-color: var(--color_gray);
-    padding         : .3em .5em;
+    padding         : .15em .5em;
     border-radius   : .5em;
     box-sizing      : border-box;
     white-space     : pre;
