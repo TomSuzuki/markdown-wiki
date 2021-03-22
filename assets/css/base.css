@@ -20,3 +20,10 @@ body {
     padding         : 2em;
     box-sizing      : border-box;
 }
+
+/* --- for smartphone --- */
+@media (max-width: 599px) {
+    #frame {
+        padding: 2em 1em;
+    }
+}

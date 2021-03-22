@@ -47,7 +47,7 @@
 #markdown code {
     display         : inline;
     background-color: var(--color_gray);
-    padding         : .3em .5em;
+    padding         : .15em .5em;
     border-radius   : .5em;
     box-sizing      : border-box;
     white-space     : pre;
@@ -86,4 +86,8 @@
 
 #markdown table tbody tr:nth-of-type(n) {
     background-color: var(--color_line);
+}
+
+#markdown blockquote {
+    border-left: .25em solid var(--color_gray);
 }
