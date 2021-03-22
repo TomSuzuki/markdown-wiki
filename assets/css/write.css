@@ -10,6 +10,14 @@
     max-width            : 100%;
 }
 
+/* --- for smartphone --- */
+@media (max-width: 599px) {
+    #frame_write {
+        grid-template     : "name""text""save";
+        grid-template-rows: auto 1fr auto;
+    }
+}
+
 #frame_write #write_name {
     grid-area: name;
     font-size: xx-large;
