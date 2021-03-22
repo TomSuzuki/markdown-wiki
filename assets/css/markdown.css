@@ -87,3 +87,7 @@
 #markdown table tbody tr:nth-of-type(n) {
     background-color: var(--color_line);
 }
+
+#markdown blockquote {
+    border-left: .25em solid var(--color_gray);
+}
