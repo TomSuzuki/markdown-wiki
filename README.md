@@ -15,6 +15,8 @@ go run main.go
 
 ## 見た目
 <img src="./readme/sample.png" width="320px">
+<img src="./readme/ca7525c4c43782f4161de45169b9f6ce.gif" width="320px">
+
 
 ## 使用しているマークダウン生成関数
 [TomSuzuki/gomarkdown: replaces markdown strings with HTML strings.](https://github.com/TomSuzuki/gomarkdown)
