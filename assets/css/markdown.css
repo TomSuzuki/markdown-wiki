@@ -19,6 +19,14 @@
     margin-bottom: 4em;
 }
 
+#markdown {
+    /* 幅の調節方法を変えたい */
+    max-width : calc(100vw - 3em - 1em - 4em);
+    position  : relative;
+    display   : block;
+    box-sizing: border-box;
+}
+
 #markdown * {
     max-width : 100%;
     box-sizing: border-box;
@@ -57,14 +65,36 @@
     white-space     : normal;
 }
 
+#markdown pre {
+    max-width: 100%;
+}
+
 #markdown pre>code {
+    hyphens    : none;
+    box-sizing : border-box;
     padding    : 1em;
     margin     : 1em .5em;
     display    : block;
     line-height: 1.25em;
-    overflow-x : scroll;
+    word-wrap  : normal;
+    white-space: pre;
+    overflow-x : auto;
 }
 
+#markdown pre>code::-webkit-scrollbar {
+    width : .75em;
+    height: .75em;
+}
+
+#markdown pre>code::-webkit-scrollbar-track {
+    background   : var(--color_background_light);
+    border-radius: 100px;
+}
+
+#markdown pre>code::-webkit-scrollbar-thumb {
+    background   : var(--color_background_dark);
+    border-radius: 100px;
+}
 
 #markdown table {
     background-color: var(--color_gray);

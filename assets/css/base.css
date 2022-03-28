@@ -10,6 +10,7 @@ body {
     display              : grid;
     grid-template-columns: 3em 1fr;
     min-height           : 100vh;
+    max-width            : 100vw;
     padding              : .5em 0 0 .5em;
     box-sizing           : border-box;
     background-color     : var(--color_background);
@@ -19,6 +20,7 @@ body {
     background-color: var(--color_line);
     padding         : 2em;
     box-sizing      : border-box;
+    max-width       : 100%;
 }
 
 /* --- for smartphone --- */
