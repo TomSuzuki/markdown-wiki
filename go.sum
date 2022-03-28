@@ -10,6 +10,8 @@ github.com/TomSuzuki/gomarkdown v1.3.1 h1:Hc7RnAUPP5sy9SP1oEUagB+soWzAf2vvd9cBj3
 github.com/TomSuzuki/gomarkdown v1.3.1/go.mod h1:2ef4YVn57XdcnKFa46Dqx2X0+p6aiegPvjtErxPnr6w=
 github.com/TomSuzuki/white600 v1.0.0 h1:GgxfI1cxx48rkBeICFJE+s4Hl19TCbved4lUnLjHQVw=
 github.com/TomSuzuki/white600 v1.0.0/go.mod h1:ckChJVRTLKC+9qcKcphOlV6cajpezUgBILxE7tayTwE=
+github.com/TomSuzuki/white600 v1.0.1 h1:K2i4VCtU4YpFm+uM24LM9a/D91v/LsNntwm4S8yCJD8=
+github.com/TomSuzuki/white600 v1.0.1/go.mod h1:ckChJVRTLKC+9qcKcphOlV6cajpezUgBILxE7tayTwE=
 github.com/creack/pty v1.1.9/go.mod h1:oKZEueFk5CKHvIhNR5MUki03XCEU+Q6VDXinZuGJ33E=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
