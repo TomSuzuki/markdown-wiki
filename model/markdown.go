@@ -6,8 +6,8 @@ import (
 	"io/ioutil"
 	"os"
 
-	"github.com/TomSuzuki/gomarkdown"
 	"github.com/TomSuzuki/markdown-wiki/config"
+	"github.com/TomSuzuki/white600"
 )
 
 // GetWordText ...単語ファイルのマークダウンを読み取って返す。
@@ -24,5 +24,5 @@ func GetFileString(path string) (string, error) {
 
 // MarkdownToHTML ...マークダウンからHTMLに。
 func MarkdownToHTML(text string) template.HTML {
-	return template.HTML(gomarkdown.MarkdownToHTML(text))
+	return template.HTML(white600.MarkdownToHTML(text))
 }

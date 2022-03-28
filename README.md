@@ -19,4 +19,4 @@ go run main.go
 
 
 ## 使用しているマークダウン生成関数
-[TomSuzuki/gomarkdown: replaces markdown strings with HTML strings.](https://github.com/TomSuzuki/gomarkdown)
+[TomSuzuki/white600: Markdown → HTML](https://github.com/TomSuzuki/white600)
