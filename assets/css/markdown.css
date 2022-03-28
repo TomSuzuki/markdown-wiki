@@ -26,14 +26,16 @@
 
 #markdown h1 {
     margin-top   : 3em;
+    padding-left : .5em;
     font-size    : x-large;
     border-bottom: 2px solid var(--color_background);
 }
 
 #markdown h2 {
     margin-top   : 2em;
+    padding-left : .5em;
     font-size    : large;
-    border-bottom: 1px solid var(--color_gray);
+    border-bottom: 1px solid var(--color_background);
 }
 
 #markdown p {
@@ -50,9 +52,9 @@
     padding         : .15em .5em;
     border-radius   : .5em;
     box-sizing      : border-box;
-    white-space     : pre;
     margin          : .1em .25em;
     font-weight     : initial;
+    white-space     : normal;
 }
 
 #markdown pre>code {
@@ -60,6 +62,7 @@
     margin     : 1em .5em;
     display    : block;
     line-height: 1.25em;
+    overflow-x : scroll;
 }
 
 
