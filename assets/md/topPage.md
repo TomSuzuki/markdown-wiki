@@ -15,6 +15,6 @@ go run main.go
 書式は基本的なマークダウンの形式です。
 
 # 使用しているマークダウン生成関数
-[TomSuzuki/gomarkdown: replaces markdown strings with HTML strings.](https://github.com/TomSuzuki/gomarkdown)
+[TomSuzuki/white600: Markdown → HTML](https://github.com/TomSuzuki/white600)
 
 
