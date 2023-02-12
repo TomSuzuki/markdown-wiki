@@ -66,3 +66,10 @@ type EditPage struct {
 	EditName string
 	IsNew    bool
 }
+
+// マークダウンだけ返す
+type MarkdDownData struct {
+	Word     string `json:"word"`
+	Markdown string `json:"markdown"`
+	FileName string `json:"file_name"`
+}

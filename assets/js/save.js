@@ -11,6 +11,24 @@ function deletePage(name) {
     }, "DELETE");
 }
 
+// savePageMarkdown ...
+function savePageMarkdown(word) {
+    accessServer(`/markdown?word=${word}`, (result) => {
+        // 取得データ
+        let json = JSON.parse(result);
+        let file_name = json.file_name;
+        let body = json.markdown;
+
+        // ファイル保存
+        let blob = new Blob([body], { type: 'plain/text' });
+        let a = document.createElement("a");
+        a.href = URL.createObjectURL(blob);
+        a.download = file_name;
+        a.click();
+        URL.revokeObjectURL(a.href);
+    });
+}
+
 // onsubmit ...
 function onsubmit(formId, type) {
     // sendData ...Fromの送信を行う。
@@ -63,9 +81,6 @@ function onsubmit(formId, type) {
                 accessServer(`/page?w=${oldName}`, () => { }, "DELETE");
             }
         }
-
-
-
     });
 }
 

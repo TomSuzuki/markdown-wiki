@@ -21,6 +21,7 @@ func Router() (router *gin.Engine) {
 	router.GET("/write", controller.WritePageController)
 	router.GET("/search", controller.SearchPageController)
 	router.GET("/edit", controller.EditPageController)
+	router.GET("/markdown", controller.MarkdownController)
 
 	router.POST("/save", controller.SaveController)
 
