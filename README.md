@@ -4,16 +4,27 @@
  <p align="center">マークダウンで記事を作成できるタイプのWikiっぽいもの。</p>
 </p>
 
-## 起動方法
-```shell
-go run main.go
+## ビルド＆起動
+Dockerを使用します。
+
+### ビルド
+```sh
+docker-compose build
 ```
-`go 1.15`を使用します。
+
+### 起動
+```sh
+docker-compose up -d
+```
+
+## 特徴
+- マークダウンファイルとして保存
+- Docker上で動作
 
 ## 操作方法
 サーバーを起動し、ブラウザで [http://localhost:9988/](http://localhost:9988/) を開いてトップページの説明を読んでください。
 
-## 見た目
+## 画面
 <img src="./readme/sample.png" width="320px">
 <img src="./readme/ca7525c4c43782f4161de45169b9f6ce.gif" width="320px">
 

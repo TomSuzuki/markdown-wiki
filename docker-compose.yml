@@ -1,0 +1,13 @@
+version: '3' # composeファイルのバージョン
+services:
+  markdown-wiki: # サービス名
+    build: # ビルドに使うDockerファイルのパス
+      context: .
+      dockerfile: ./build/Dockerfile
+    volumes: # マウントディレクトリ
+      - ./:/go/src/github.com/markdown-wiki
+    tty: true # コンテナの永続化
+    environment:
+      - TZ=Asia/Tokyo
+    ports:
+      - 9988:9988
