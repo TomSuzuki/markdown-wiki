@@ -1,0 +1,10 @@
+#frame_markdown {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100%;
+}
+
+#foot_menu_list {
+    display: flex;
+    justify-content: center;
+}
